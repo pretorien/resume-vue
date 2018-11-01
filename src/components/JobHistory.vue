@@ -12,8 +12,15 @@
                             <icon name="map-marker"></icon> {{ job.city }}
                         </p>
                     </div>
-                    <div v-if="job.description" class="timeline-body">
-                        <p>{{ job.description }}</p>
+                    <div v-if="job.tasks" class="timeline-body">
+                        <ul class="tasks">
+                            <li v-for="task in job.tasks">
+                                {{ task.title }}
+                                <ul class="keywords">
+                                    <li v-for="keyword in task.keywords">{{ keyword }}</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </li>
@@ -40,5 +47,20 @@
 </script>
 
 <style scoped>
+    .tasks {
+        margin-top:10px;
+    }
+    .tasks ul.keywords {
+        padding: 0 0 0 10px;
+    }
 
+    .tasks ul.keywords li {
+        display: inline;
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+
+    .tasks ul.keywords li:not(:first-child)::before {
+        content: " | ";
+    }
 </style>

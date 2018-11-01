@@ -9,8 +9,12 @@
                         <span class="progress-type">{{ item.name }}</span>
                     </div>
                 </div>
-                <div class="progress-meter">
-                    <div v-for="meter in skills_meter" :class="'meter meter-' + meter.direction" :style="'width: ' + meter.level +'%'"><span class="meter-text">{{ meter.label }}</span></div>
+                <div class="grille-evaluation">
+                    <div class="evaluation evaluation-beginner"><span>Débutant</span></div>
+                    <div class="evaluation evaluation-basic"><span>Basique</span></div>
+                    <div class="evaluation evaluation-advance"><span>Avancé</span></div>
+                    <div class="evaluation evaluation-competent"><span>Compétent</span></div>
+                    <div class="evaluation evaluation-expert"><span>Expert</span></div>
                 </div>
             </div>
         </div>
@@ -28,13 +32,6 @@
                 bg_class: [
                     'bg-grey',
                     'bg-red'
-                ],
-                skills_meter: [
-                    {label:'Débutant', level:20, direction: 'left'}, // 0
-                    {label:'Basique', level:15, direction: 'left'}, // 20
-                    {label:'Avancé', level:25, direction: 'left'}, // 40
-                    {label:'Compétent', level:25, direction: 'left'}, //60
-                    {label:'Expert', level:15, direction: 'left'} // 85
                 ]
             }
         }
@@ -64,72 +61,80 @@
         background-color: rgb(75, 111, 120);
     }
 
-    .w-beginner {
-        width:10%;
-    }
-
-    .w-basic {
-        width:20%;
-    }
-
-    .w-advance {
-        width:35%;
-    }
-
-    .w-competent {
-        width:60%;
-    }
-
-    .w-expert {
-        width:85%;
-    }
-
     .progress-bar > .progress-type {
         padding-left: 5px;
         font-weight: bold;
         color: #FFF;
     }
 
-    .progress-meter {
+    .grille-evaluation {
         min-height: 15px;
         border-bottom: 2px solid rgb(160, 160, 160);
         margin-bottom: 25px;
     }
 
-    .progress-meter > .meter {
+    .grille-evaluation .evaluation {
         position: relative;
         float: left;
         min-height: 15px;
         border-width: 0px;
         border-style: solid;
         border-color: rgb(160, 160, 160);
-    }
-
-    .progress-meter > .meter-left {
         border-left-width: 2px;
+        height: 15px;
     }
 
-    .progress-meter > .meter-right {
-        float: right;
-        border-right-width: 2px;
-    }
-
-    .progress-meter > .meter-right:last-child {
-        border-left-width: 2px;
-    }
-
-    .progress-meter > .meter > .meter-text {
-        position: absolute;
+    .grille-evaluation .evaluation span {
+        position: relative;
         display: inline-block;
-        bottom: -20px;
+        bottom: -15px;
         width: 100%;
         font-weight: 700;
         font-size: 0.85em;
         color: rgb(160, 160, 160);
-        text-align: left;
-    }
-
-    .progress-meter > .meter.meter-right > .meter-text {
         text-align: right;
     }
+
+    .grille-evaluation .evaluation-beginner {
+        border-left-width: 0px;
+        width: 20%;
+    }
+
+    .grille-evaluation .evaluation-basic {
+        width: 20%;
+    }
+
+    .grille-evaluation .evaluation-advance {
+        width: 20%;
+    }
+
+    .grille-evaluation .evaluation-competent {
+        width: 20%;
+    }
+
+    .grille-evaluation .evaluation-expert {
+        width: 20%;
+        border-right-width: 2px;
+    }
+
+    .w-beginner {
+        width:20%;
+    }
+
+    .w-basic {
+        width:40%;
+    }
+
+    .w-advance {
+        width:60%;
+    }
+
+    .w-competent {
+        width:80%;
+    }
+
+    .w-expert {
+        width:100%;
+    }
+
 </style>

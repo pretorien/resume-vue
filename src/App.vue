@@ -2,7 +2,7 @@
   <div id="app">
       <div v-if="!userProfile">Chargement des données en cours</div>
       <div v-else>
-          <Header :name="userProfile.name" :poste="userProfile.poste" :city="userProfile.city" :email="userProfile.email" :social="userProfile.social"  />
+          <Header :name="userProfile.name" :poste="userProfile.poste" :city="userProfile.city" :email="userProfile.email" :social="userProfile.social" :other="userProfile.other" />
           <div class="page-content">
               <div class="wrapper">
                   <div class="container-fluid">

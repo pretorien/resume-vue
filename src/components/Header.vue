@@ -4,16 +4,15 @@
         <div class="media-body">
             <h5 class="mt-0">{{ name }}</h5>
             <h4>{{ poste }}</h4>
-            <p>
-                <icon name="map-marker"></icon> {{ city }}
-            </p>
-            <p class="media-info">
-                <span v-if="email"><a :href="'mailto:'+ email"><icon class="social" name="envelope" scale="2"></icon></a></span>
-                <span v-if="social.github"><a title="GitHub" :href="'//github.com/'+ social.github" target="_blank"><icon class="social" name="brands/github-square" scale="2"></icon></a></span>
-                <span v-if="social.linkedin"><a title="LinkedIn" :href="'//linkedin.com/in/'+ social.linkedin" target="_blank"><icon class="social" name="brands/linkedin" scale="2"></icon></a></span>
-                <span v-if="social.twitter"><a title="Twitter" :href="'//twitter.com/'+ social.twitter" target="_blank"><icon class="social" name="brands/twitter-square" scale="2"></icon></a></span>
-                <!--<span><a :href="'//twitter.com/'+ social.twitter" target="_blank"><icon class="social" name="print" scale="2"></icon> test</a></span>-->
-            </p>
+            <div class="coordonnees">
+                <span><icon name="map-marker"></icon> {{ city }}</span>
+                <span class="break" />
+                <span v-if="email"><icon name="envelope" scale="1.2"></icon><a :href="'mailto:'+ email">{{ email }}</a></span>
+                <span v-if="social.github"><icon name="brands/github-square" scale="1.2"></icon><a title="GitHub" :href="'//github.com/'+ social.github" target="_blank">@{{ social.github }}</a></span>
+                <span v-if="social.linkedin"><icon name="brands/linkedin" scale="1.2"></icon><a title="LinkedIn" :href="'//linkedin.com/in/'+ social.linkedin" target="_blank">beckf</a></span>
+                <span class="break" />
+                <span v-if="other" class="saut">{{ other }}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -21,7 +20,7 @@
 <script>
     export default {
         name: "Header",
-        props: ["name","poste","city","email","social"],
+        props: ["name","poste","city","email","social","other"],
         data(){
             return {
                 cv_label: "CV",
@@ -65,44 +64,21 @@
         font-size: 2em;
     }
 
-    .media-info span {
-        margin: 0 5px 0 0;
+    .coordonnees span.break {
+        margin-top: 10px;
     }
 
-    .media-info span a {
+    .coordonnees span {
+        display: block;
+    }
+
+    .coordonnees span a {
+        color: #000;
+    }
+
+    .coordonnees span .fa-icon {
         color: #337ab7;
+        margin-right: 5px;
     }
 
-    .social:hover {
-        -webkit-transform: scale(1.1);
-        -moz-transform: scale(1.1);
-        -o-transform: scale(1.1);
-    }
-    .social {
-        -webkit-transform: scale(0.8);
-        /* Browser Variations: */
-
-        -moz-transform: scale(0.8);
-        -o-transform: scale(0.8);
-        -webkit-transition-duration: 0.5s;
-        -moz-transition-duration: 0.5s;
-        -o-transition-duration: 0.5s;
-    }
-
-    /*
-        Multicoloured Hover Variations
-    */
-
-    #social-fb:hover {
-        color: #3B5998;
-    }
-    #social-tw:hover {
-        color: #4099FF;
-    }
-    #social-gp:hover {
-        color: #d34836;
-    }
-    #social-em:hover {
-        color: #f39c12;
-    }
 </style>

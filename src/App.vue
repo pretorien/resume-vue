@@ -1,28 +1,71 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <div v-if="!userProfile">Chargement des données en cours</div>
+      <div v-else>
+          <Header :name="userProfile.name" :poste="userProfile.poste" :city="userProfile.city" :email="userProfile.email" :social="userProfile.social"  />
+          <div class="page-content">
+              <div class="wrapper">
+                  <div class="container-fluid">
+                      <div class="row" style="display: flex">
+                          <div class="col-md-7">
+                              <JobHistory :jobs="userProfile.jobs" />
+                              <EducationHistory :degrees="userProfile.degrees" />
+                              <ProfessionalTraining :courses="userProfile.courses" />
+                          </div>
+                          <div class="col-md-4 offset-md-1">
+                              <SkillsList :skills="userProfile.skills" />
+                              <div class="deviter"></div>
+                              <Languages :languages="userProfile.languages" />
+                              <!--<div class="deviter"></div>-->
+                              <!--<Location :location="userProfile.location" />-->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <Footer />
+      </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    import Header from '@/components/Header.vue'
+    import JobHistory from "@/components/JobHistory";
+    import SkillsList from "@/components/SkillsList";
+    import Footer from "@/components/Footer";
+    import EducationHistory from "@/components/EducationHistory";
+    import Location from "@/components/Location";
+    import Languages from "@/components/Languages";
+    import ProfessionalTraining from "@/components/ProfessionalTraining";
+
+    import userProfile from "@/static/data/cv.json";
+
+    export default {
+        name: 'app',
+        components: {
+            ProfessionalTraining,
+            Languages,
+            Location,
+            EducationHistory,
+            Footer,
+            SkillsList,
+            JobHistory,
+            Header
+        },
+        data() {
+            return {
+                userProfile
+            }
+        }
+    }
+
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    @import './assets/css/resumecard.css';
+</style>
+
+<style lang="scss">
+    @import '../node_modules/bootstrap/scss/bootstrap.scss';
 </style>

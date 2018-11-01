@@ -1,0 +1,53 @@
+{
+    "name": "BECK Frédéric",
+    "poste": "Ingénieur",
+    "city": "Strasbourg, France",
+    "email": "",
+    "social": {
+      "github": "",
+      "linkedin": ""
+    },
+    "languages": [
+      {"name" : "Français", "level" : "Langue maternelle"},
+      {"name" : "Anglais", "level" : "Courant"},
+      {"name" : "Allemand", "level" : "Notions"}
+    ],
+    "jobs": [
+      {
+        "start_year" : ,
+        "end_year": "",
+        "title" : "",
+        "poste": "",
+        "city": ""
+      }
+    ],
+    "degrees": [
+      {
+        "start_year" : """,
+        "end_year": """,
+        "name": "",
+        "school": "",
+        "city" : ""
+      }
+    ],
+    "courses": [
+      {
+        "year" : "",
+        "title" : "",
+        "school": "",
+        "city": "",
+        "duration": 0
+      }
+    ],
+    "skills": [
+      {
+        "category" : "",
+        "data" : [
+          {"name":"PHP 7", "level": "competent"},
+          {"name":"Symfony", "level": "expert"},
+          {"name":"HTML 5", "level": "competent"},
+          {"name":"CSS 3", "level": "advance"}
+        ]
+      }
+    ]
+}

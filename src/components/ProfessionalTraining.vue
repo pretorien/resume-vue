@@ -36,9 +36,6 @@
 </script>
 
 <style scoped>
-    .card-columns {
-        margin-left:65px;
-    }
     .card-title {
         color: rgb(186, 78, 78);
     }

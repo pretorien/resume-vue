@@ -42,11 +42,11 @@
         height: auto;
         padding: 20px 0;
         margin-bottom: 20px;
-        margin-left: 10px;
+        padding-left: 10px;
     }
 
     .header img {
-        width: 150px;
+        height: 230px;
     }
 
     .header li {

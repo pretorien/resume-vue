@@ -108,7 +108,7 @@ hr {
     width: 3px;
     background-color: #eeeeee;
     margin-left: -1.5px;
-    left: 2%;
+    left: 20px;
 }
 
 .timeline > li {
@@ -393,7 +393,7 @@ hr {
 
 .title.with-icon {
     padding-left: 50px;
-    margin-left: 7px;
+    margin-left: 3px;
     font-size: 20px;
 }
 

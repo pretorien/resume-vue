@@ -57,6 +57,9 @@
             return {
                 userProfile
             }
+        },
+        created () {
+            document.title = 'CV - ' + this.userProfile.name;
         }
     }
 

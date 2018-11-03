@@ -27,5 +27,12 @@
 </script>
 
 <style scoped>
-
+    ul.list-strip {
+        margin-bottom: 0px;
+    }
+    .list-strip li {
+        padding: 5px;
+        margin-bottom: 6px;
+        border-radius: 5px;
+    }
 </style>

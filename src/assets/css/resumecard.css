@@ -345,14 +345,21 @@ hr {
 
 .list-strip li {
     color: white;
-    padding: 10px;
-    margin-bottom: 6px;
-    border-radius: 5px;
     background: #4B6F78;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.list-strip li .fa-icon {
+    margin-right: 5px;
 }
 
 .list-strip li:nth-child(even) {
     background: #BA4E4E;
+}
+
+.list-strip .badge {
+    font-size:12px;
 }
 
 .btn-flat {

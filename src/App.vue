@@ -2,6 +2,7 @@
   <div id="app">
       <div v-if="!userProfile">Chargement des données en cours</div>
       <div v-else>
+          <GithubRibbon :url="project_url" :label="project_label"></GithubRibbon>
           <Header :name="userProfile.name" :poste="userProfile.poste" :city="userProfile.city" :email="userProfile.email" :social="userProfile.social" :other="userProfile.other" />
           <div class="page-content">
               <div class="wrapper">
@@ -40,10 +41,12 @@
     import ProfessionalTraining from "@/components/ProfessionalTraining";
 
     import userProfile from "@/static/data/cv.json";
+    import GithubRibbon from "./components/GithubRibbon";
 
     export default {
         name: 'app',
         components: {
+            GithubRibbon,
             ProfessionalTraining,
             Languages,
             Location,
@@ -55,7 +58,9 @@
         },
         data() {
             return {
-                userProfile
+                userProfile,
+                project_url: 'https://github.com/pretorien/cv-vue',
+                project_label: 'cv-vue'
             }
         },
         created () {
@@ -64,6 +69,7 @@
     }
 
 </script>
+
 
 <style>
     @import './assets/css/resumecard.css';
